@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Approval Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="landing-body">
+    <div class="background-overlay"></div>
+
+    <div class="landing-container">
+        <div class="glass-card hero-card">
+            <h1>Credit Card Approval Prediction</h1>
+            <p class="subtitle">
+                Predict whether a credit card application is likely to be approved or rejected
+                using machine learning.
+            </p>
+
+            <div class="hero-features">
+                <div class="feature-box">
+                    <span>⚡</span>
+                    <p>Fast Prediction</p>
+                </div>
+                <div class="feature-box">
+                    <span>📊</span>
+                    <p>ML Based Decision</p>
+                </div>
+                <div class="feature-box">
+                    <span>💳</span>
+                    <p>Credit Approval Check</p>
+                </div>
+            </div>
+
+            <a href="{{ url_for('home') }}" class="main-btn">Start Prediction</a>
+        </div>
+    </div>
+</body>
+</html>

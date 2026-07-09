@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Applicant Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="form-body">
+    <div class="background-overlay"></div>
+
+    <div class="form-page-wrapper">
+        <div class="glass-card form-card">
+            <h1>Credit Card Approval Form</h1>
+            <p class="subtitle">Fill in the applicant details to predict approval status.</p>
+
+            <form action="{{ url_for('predict') }}" method="POST" class="prediction-form">
+                
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label>Gender</label>
+                        <select name="gender" required>
+                            <option value="">Select</option>
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Own Car</label>
+                        <select name="car" required>
+                            <option value="">Select</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Own House / Realty</label>
+                        <select name="reality" required>
+                            <option value="">Select</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Number of Children</label>
+                        <input type="number" name="child_num" placeholder="e.g. 2" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Total Income</label>
+                        <input type="number" step="any" name="income_total" placeholder="e.g. 50000" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Income Type</label>
+                        <select name="income_type" required>
+                            <option value="">Select</option>
+                            <option value="0">Working</option>
+                            <option value="1">Commercial Associate</option>
+                            <option value="2">Pensioner</option>
+                            <option value="3">State Servant</option>
+                            <option value="4">Student</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Education Type</label>
+                        <select name="education_type" required>
+                            <option value="">Select</option>
+                            <option value="0">Secondary / Secondary Special</option>
+                            <option value="1">Higher Education</option>
+                            <option value="2">Incomplete Higher</option>
+                            <option value="3">Lower Secondary</option>
+                            <option value="4">Academic Degree</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Family Status</label>
+                        <select name="family_type" required>
+                            <option value="">Select</option>
+                            <option value="0">Married</option>
+                            <option value="1">Single / Not Married</option>
+                            <option value="2">Civil Marriage</option>
+                            <option value="3">Separated</option>
+                            <option value="4">Widow</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Housing Type</label>
+                        <select name="housing_type" required>
+                            <option value="">Select</option>
+                            <option value="0">House / Apartment</option>
+                            <option value="1">With Parents</option>
+                            <option value="2">Municipal Apartment</option>
+                            <option value="3">Rented Apartment</option>
+                            <option value="4">Office Apartment</option>
+                            <option value="5">Co-op Apartment</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Days Since Birth</label>
+                        <input type="number" name="days_birth" placeholder="e.g. -12000" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Days Employed</label>
+                        <input type="number" name="days_employed" placeholder="e.g. -3000" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Mobile Available</label>
+                        <select name="flag_mobil" required>
+                            <option value="">Select</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Work Phone</label>
+                        <select name="work_phone" required>
+                            <option value="">Select</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Phone</label>
+                        <select name="phone" required>
+                            <option value="">Select</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email</label>
+                        <select name="email" required>
+                            <option value="">Select</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Occupation Type</label>
+                        <select name="occupation_type" required>
+                            <option value="">Select</option>
+                            <option value="0">Laborers</option>
+                            <option value="1">Core Staff</option>
+                            <option value="2">Accountants</option>
+                            <option value="3">Managers</option>
+                            <option value="4">Drivers</option>
+                            <option value="5">Sales Staff</option>
+                            <option value="6">Cleaning Staff</option>
+                            <option value="7">Cooking Staff</option>
+                            <option value="8">Medicine Staff</option>
+                            <option value="9">Security Staff</option>
+                            <option value="10">High Skill Tech Staff</option>
+                            <option value="11">Private Service Staff</option>
+                            <option value="12">Low-skill Laborers</option>
+                            <option value="13">Secretaries</option>
+                            <option value="14">Waiters/Barmen Staff</option>
+                            <option value="15">HR Staff</option>
+                            <option value="16">IT Staff</option>
+                            <option value="17">Realty Agents</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Family Members</label>
+                        <input type="number" name="family_members" placeholder="e.g. 4" required>
+                    </div>
+
+                </div>
+
+                <div class="btn-wrap">
+                    <button type="submit" class="main-btn">Predict Approval</button>
+                    <a href="{{ url_for('index') }}" class="secondary-btn">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

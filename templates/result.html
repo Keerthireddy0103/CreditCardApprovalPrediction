@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="result-body">
+    <div class="background-overlay"></div>
+
+    <div class="result-wrapper">
+        <div class="glass-card result-card {{ result_class }}">
+            <h1>Prediction Result</h1>
+
+            {% if result_class == "approve" %}
+                <div class="result-icon success-icon">✔</div>
+            {% else %}
+                <div class="result-icon reject-icon">✖</div>
+            {% endif %}
+
+            <h2>{{ prediction_text }}</h2>
+
+            {% if result_class == "approve" %}
+                <p class="result-msg">The application appears eligible based on the model prediction.</p>
+            {% else %}
+                <p class="result-msg">The application appears not eligible based on the model prediction.</p>
+            {% endif %}
+
+            <div class="btn-wrap">
+                <a href="{{ url_for('home') }}" class="main-btn">Try Another Prediction</a>
+                <a href="{{ url_for('index') }}" class="secondary-btn">Go Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
